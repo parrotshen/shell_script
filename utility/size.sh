@@ -8,7 +8,7 @@ fi
 echo "List the size of .o file(s):"
 echo ""
 
-list=`find $dir -regex ".*\.o"`
+list=$(find $dir -regex ".*\.o")
 
 for x in $list
 do

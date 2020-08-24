@@ -13,7 +13,7 @@ if [ $# == 2 ]; then
   dir=$2
 fi
 
-result=`find $dir -name "$1" -print`
+result=$(find $dir -name "$1" -print)
 
 if [ "$result" = "" ]; then
   echo "Nothing ..."

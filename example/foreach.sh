@@ -6,10 +6,11 @@ if [ $# != 1 ]; then
    exit
 fi
 
-list=`cat $1 | tr -d '\r'`
+list=$(cat $1 | tr -d '\r')
 item=
 
 echo "List before filter:"
+echo "$list"
 
 for x in $list
 do
@@ -18,7 +19,7 @@ do
    #echo ":1:1 ... ${x:1:1}"
 
    if [ ${x:0:1} != "#" ]; then
-      echo "$x"
+      #echo "$x"
       item="$item $x"
    fi
 done

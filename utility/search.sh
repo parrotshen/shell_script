@@ -17,8 +17,8 @@ echo "--------------------------------------------------------------------------
 echo "Processing ..."
 echo ""
 
-#list=`egrep -rwl $1 $dir | egrep "\.(c|h|cpp)$"`
-list=`grep -rwl "$1" $dir | grep "\.\(c\|C\|h\|H\|cpp\|s\|S\|java\|v\|m\)$"`
+#list=$(egrep -rwl $1 $dir | egrep "\.(c|h|cpp)$")
+list=$(grep -rwl "$1" $dir | grep "\.\(c\|C\|h\|H\|cpp\|s\|S\|java\|v\|m\)$")
 
 for x in $list
 do

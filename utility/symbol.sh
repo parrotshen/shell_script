@@ -17,7 +17,7 @@ echo "--------------------------------------------------------------------------
 echo "Processing ..."
 echo ""
 
-list=`find $dir -regex ".*\.o" -or -regex ".*\.a" -or -regex ".*\.sa" -or -regex ".*\.so" -or -regex ".*\.ko"`
+list=$(find $dir -regex ".*\.o" -or -regex ".*\.a" -or -regex ".*\.sa" -or -regex ".*\.so" -or -regex ".*\.ko")
 
 for x in $list
 do
