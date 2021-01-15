@@ -1,5 +1,10 @@
 #!/bin/bash
 
+#
+# $@ ==> "$1" "$"2 "$3" ...
+# $* ==> "$1 $2 $3 ..."
+#
+
 echo "PID of the current shell:"
 echo "[1;35m\$$[0m = $$"
 echo

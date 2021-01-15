@@ -3,7 +3,7 @@
 if [ $# == 0 ]; then
   echo "Usage: $0 <file_name>"
   echo "     : $0 <file_name> <search_path>"
-  echo ""
+  echo
   exit
 fi
 
@@ -15,10 +15,10 @@ fi
 
 result=$(find $dir -name "$1" -print)
 
-if [ "$result" = "" ]; then
+if [ -z "$result" ]; then
   echo "Nothing ..."
 else
   echo "[1;31m$result[0m"
 fi
 
-echo ""
+echo

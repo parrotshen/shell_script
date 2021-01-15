@@ -8,6 +8,11 @@ fi
 
 for hex in $*
 do
-  echo -n -e "\x$hex"
+  dec=$(printf "%u" "0x$hex")
+  if [ $dec -ge 32 ] && [ $dec -le 126 ]; then
+    echo -n -e "\x$hex"
+  else
+    echo -n -e "\x20"
+  fi
 done
 echo
