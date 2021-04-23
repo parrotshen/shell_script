@@ -7,13 +7,14 @@ if [ $# == 0 ]; then
   exit
 fi
 
-type=$1
+TYPE=$1
+PROCESS=$(ps -A -o pid=)
 
 echo
 echo "[1;32mPID	FD	Port	Command[0m"
 
 # scan all process
-for pid in $(ps -A -o pid=);
+for pid in $PROCESS;
 do
   if [ $pid -lt $$ ]; then
 
@@ -29,7 +30,7 @@ do
         inode=$(sudo echo -n $link | awk -F '[][]' '{print $2}')
 
         # find TCP/UDP port by the i-node number
-        str=$(cat /proc/net/$type | grep $inode)
+        str=$(cat /proc/net/$TYPE | grep -w $inode)
         if [ -n "$str" ]; then
           port=$(echo -n $str | awk -F ' ' '{print $2}' | awk -F ':' '{print $2}')
           port=$(printf "%u" "0x$port")
