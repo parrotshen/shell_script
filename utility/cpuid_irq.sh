@@ -1,12 +1,12 @@
 #!/bin/bash
 
 if [ $# == 1 ]; then
+    cat /proc/interrupts | head -n 1
     cat /proc/interrupts | grep "^ *$1:"
-    echo
     exit
 fi
 
-LIST=$(ls -v /proc/irq/ | tr -d default_smp_affinity)
+LIST=$(echo $(ls -v /proc/irq/) | tr -d default_smp_affinity)
 
 printf '[1;36mMask\tIRQ\tDevice[0m\n'
 for IRQ in ${LIST}

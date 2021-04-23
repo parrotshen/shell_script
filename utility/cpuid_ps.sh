@@ -1,8 +1,7 @@
 #!/bin/bash
 
 if [ $# == 1 ]; then
-    cat /proc/$1/cmdline
-    echo
+    echo $(cat /proc/$1/cmdline)
     exit
 fi
 
@@ -13,7 +12,7 @@ printf '[1;36mCPU\tPID\tProcess[0m\n'
 for PID in ${PROCESSES}
 do
     CPU=$(taskset -cp ${PID} | sed 's/^.*: //')
-    NAME=$(cat /proc/${PID}/status | grep Name | awk '{print $2}')
+    NAME=$(cat /proc/${PID}/status | grep "Name:" | awk '{print $2}')
     CMDLINE=$(cat /proc/${PID}/cmdline)
     if [ "$NAME" == "$MYSELF" ]; then
         break
