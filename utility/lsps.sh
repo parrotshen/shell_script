@@ -7,7 +7,7 @@ else
 fi
 
 MYSELF=$(basename $0)
-PROCESSES=$(ps ax -o pid=)
+PROCESSES=$(ls -v /proc/ | grep "^[0-9]")
 
 for PID in ${PROCESSES}
 do

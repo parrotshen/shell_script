@@ -6,12 +6,12 @@ if [ $# == 1 ]; then
 fi
 
 MYSELF=$(basename $0)
-PROCESSES=$(ps ax -o pid=)
+PROCESSES=$(ls -v /proc/ | grep "^[0-9]")
 
 printf '[1;36mCPU\tPID\tProcess[0m\n'
 for PID in ${PROCESSES}
 do
-    CPU=$(taskset -cp ${PID} | sed 's/^.*: //')
+    CPU=$(taskset -cp ${PID} | awk '{print $NF}')
     NAME=$(cat /proc/${PID}/status | grep "Name:" | awk '{print $2}')
     CMDLINE=$(cat /proc/${PID}/cmdline)
     if [ "$NAME" == "$MYSELF" ]; then
