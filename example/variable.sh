@@ -45,3 +45,8 @@ echo "Current option flags of the shell:"
 echo "[1;35m\$-[0m = $-"
 echo
 
+echo "All files in this directory:"
+echo -n "[1;35m*[0m = "
+echo *
+echo
+
