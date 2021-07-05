@@ -4,29 +4,29 @@ filename=list.txt
 
 pattern="a."
 echo "grep \"[1;36m$pattern[0m\" $filename"
-echo ""
+echo
 grep --color $pattern $filename
-echo ""
-echo ""
+echo
+echo
 
 pattern="[K-Tk-t]"
 echo "grep \"[1;36m$pattern[0m\" $filename"
-echo ""
+echo
 grep --color $pattern $filename
-echo ""
-echo ""
+echo
+echo
 
 pattern=" \\+$"
 echo "grep \"[1;36m$pattern[0m\" $filename"
-echo ""
+echo
 grep --color " \+$" $filename
-echo ""
-echo ""
+echo
+echo
 
 pattern="^[XYZ]"
 echo "grep \"[1;36m$pattern[0m\" $filename"
-echo ""
+echo
 grep --color $pattern $filename
-echo ""
-echo ""
+echo
+echo
 
