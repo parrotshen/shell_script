@@ -1,12 +1,15 @@
 #!/bin/bash
 
-if [ $# -eq 0 ]; then
-  echo "Usage: $0 PATCH_FILE..."
+if [ $# -gt 1 ]; then
+  input=$1
+  num=$2
+elif [ $# -gt 0 ]; then
+  input=$1
+  num=0
+else
+  echo "Usage: $0 PATCH_FILE [STRIP_NUM]"
   echo
   exit
 fi
 
-for file in "$@"
-do
-  patch -p0 < ${file}
-done
+patch -p${num} < ${input}
