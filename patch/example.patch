@@ -1,0 +1,28 @@
+diff -Naur example/bar.txt example2/bar.txt
+--- example/bar.txt	2021-08-17 11:57:01.500894598 +0800
++++ example2/bar.txt	2021-08-17 11:56:56.548895658 +0800
+@@ -3,3 +3,6 @@
+   producing patched versions.
+ Normally the patched versions are put in place of the originals.
+ Backups can be made; see the -b or --backup option.
++The names of the files to be patched are usually taken from the patch file,
++  but if there’s just one file to be patched
++  it can be specified on the command line as original file.
+diff -Naur example/foo.txt example2/foo.txt
+--- example/foo.txt	2021-08-16 16:51:36.878557000 +0800
++++ example2/foo.txt	2021-08-16 16:51:42.225686000 +0800
+@@ -1,9 +1,9 @@
+ Hello, diff and patch!
+ 
+ Sunday
+-Monday
+-Tuesday
+-Wednesday
+-Thursday
+-Friday
++Holiday
++Holiday
++Holiday
++Holiday
++Holiday
+ Saturday
